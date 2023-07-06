@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         cssPath: '~/assets/styles/tailwind.css'
       }
     ],
+    'nuxt-icon',
   ],
 
   css: ['~/assets/css/main.scss'],
