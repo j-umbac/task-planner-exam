@@ -3,28 +3,34 @@
         Loading...
     </div>
     <div v-else class="mt-4">
-        <ul class="space-y-4" v-if="filtered">
-            <li v-for="task in tasks.filteredTaskList " :key="task.id">
-                <Task :task="task"/>
-            </li>
-        </ul>
-        <ul class="space-y-4" v-else>
-            <li v-for="task in tasks.taskList" :key="task.id">
-                <Task :task="task"/>
-            </li>
-        </ul>
+        <draggable 
+            v-model="tasks.filteredTaskList" @start="drag = true" @end="drag = false" item-key="id" class="space-y-4" v-if="filtered">
+            <template #item="{ element }">
+                <Task :task="element"/>
+            </template>
+        </draggable>
+        <draggable 
+            v-model="tasks.taskList" @start="drag = true" @end="drag = false" item-key="id" class="space-y-4" v-else>
+            <template #item="{ element }">
+                <Task :task="element"/>
+            </template>
+        </draggable>
     </div>
 </template>
 
 <script setup>
-const { filtered } = defineProps(['filtered'])
+import draggable from 'vuedraggable'
 import { useTaskStore } from '@/stores/states'
+
+const { filtered } = defineProps(['filtered'])
 const { getTasks } = useTasks()
 const { getUsers } = useUsers()
 
 getTasks()
 getUsers()
 const tasks = useTaskStore()
+
+const drag = ref(false)
 
 </script>
 
