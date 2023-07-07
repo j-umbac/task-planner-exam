@@ -1,6 +1,6 @@
 <template>
     <div class="bg-surface-card p-4 shadow-lg rounded-md text-on-card flex items-center justify-between">
-        <div class="flex items-center space-x-2 w-full">
+        <div class="flex items-center space-x-4 w-full">
             <button @click="toggleComplete(task)">
                 <Icon v-if="task.is_done" name="fa6-solid:circle-check" />
                 <Icon v-else name="fa6-solid:circle" />
@@ -8,14 +8,14 @@
             <span v-if="isEdit" class="w-full">
                 <EditTask :task="task" @closeEdit="isEdit = false"/>
             </span>
-            <span :class="{ 'line-through': task.is_done }" v-else>
+            <span :class="{ 'line-through': task.is_done }" class="hover:cursor-pointer" v-else  @click="toggleEdit">
                 {{ task.title }}
             </span>
         </div>
         <div class="flex space-x-4 items-center">
-            <button  @click="toggleEdit" v-if="!isEdit" class="hover:bg-gray-100 rounded-md p-2 flex h-full">
+            <!-- <button  @click="toggleEdit" v-if="!isEdit" class="hover:bg-gray-100 rounded-md p-2 flex h-full">
                 <Icon name="fa6-solid:pen-to-square" />
-            </button>
+            </button> -->
             <AssigneeIcon :assignee="task.assignee" :task="task" />
             <button @click="toggleImportant(task)" class="hover:bg-gray-100 rounded-md p-2 flex">
                 <Icon v-if="task.is_important" name="fa6-solid:star" color="#F6C23E" />
