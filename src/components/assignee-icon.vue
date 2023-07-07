@@ -1,7 +1,7 @@
 <template>
     <div v-if="Object.keys(assignee).length" ref="target">
         <button @click="toggleDropDown(); toggle = !toggle" class="flex items-center">
-            <nuxt-img :src="assignee.avatar" class="rounded-full p-1 w-14" />
+            <nuxt-img :src="assignee.avatar" class="rounded-full p-1 w-12" />
         </button>
         <AssigneeDropdown v-if="toggle" :task="task"/>
     </div>
@@ -21,7 +21,6 @@ const target = ref(null)
 
 
 const toggleDropDown = () => {
-    console.log(toggle.value)
     onClickOutside(target, () => {
         toggle.value = false
     })
