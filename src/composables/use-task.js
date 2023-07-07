@@ -1,8 +1,9 @@
 import { useTaskStore } from '@/stores/states'
-const tasks = useTaskStore()
-const { getTasks } = useTasks()
 
 export function useTask() {
+    const tasks = useTaskStore()
+    const { getTasks } = useTasks()
+
 
     async function deleteTask(id) {
         tasks.taskList = tasks.taskList.filter(task => task.id != id)
@@ -17,7 +18,7 @@ export function useTask() {
         await useFetch(useRuntimeConfig().public.apiUrl + '/tasks/' + task.id, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({'is_important': task.is_important})
+            body: JSON.stringify({ 'is_important': task.is_important })
         }).catch(err => {
             console.log(err)
         })
@@ -29,7 +30,7 @@ export function useTask() {
         await useFetch(useRuntimeConfig().public.apiUrl + '/tasks/' + task.id, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({'is_done': task.is_done})
+            body: JSON.stringify({ 'is_done': task.is_done })
         }).catch(err => {
             console.log(err)
         })
@@ -41,7 +42,7 @@ export function useTask() {
         await useFetch(useRuntimeConfig().public.apiUrl + '/tasks/' + task.id, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({'assignee': task.assignee})
+            body: JSON.stringify({ 'assignee': task.assignee })
         }).catch(err => {
             console.log(err)
         })
@@ -51,13 +52,13 @@ export function useTask() {
         console.log(task)
     }
 
-    async function addTask(task){
-        let tempTask = Object.assign({}, task) 
+    async function addTask(task) {
+        let tempTask = Object.assign({}, task)
         await useFetch(useRuntimeConfig().public.apiUrl + '/tasks', {
             method: 'POST',
-            headers: {'content-type':'application/json'},
+            headers: { 'content-type': 'application/json' },
             body: JSON.stringify(tempTask)
-        }).then(()=> {
+        }).then(() => {
             task.title = ""
             getTasks()
         })
