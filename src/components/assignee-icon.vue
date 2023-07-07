@@ -1,12 +1,12 @@
 <template>
     <div v-if="Object.keys(assignee).length" ref="target">
-        <button @click="toggleDropDown(); toggle = !toggle" >
-            <nuxt-img :src="assignee.avatar" width="24px" height="24px" class="rounded-full" />
+        <button @click="toggleDropDown(); toggle = !toggle" class="flex items-center">
+            <nuxt-img :src="assignee.avatar" class="rounded-full p-1 w-14" />
         </button>
         <AssigneeDropdown v-if="toggle" :task="task"/>
     </div>
     <div v-else ref="target">
-        <button class="hover:bg-gray-100 px-1 rounded-md pb-1" @click="toggleDropDown(); toggle = !toggle">
+        <button class="hover:bg-gray-100 rounded-md p-2 flex" @click="toggleDropDown(); toggle = !toggle">
             <Icon name="fa6-solid:angle-up" v-if="toggle" />
             <Icon name="fa6-solid:angle-down" v-else />
         </button>
