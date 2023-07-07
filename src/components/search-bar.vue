@@ -17,7 +17,7 @@ const search = () => {
     if (timer.value) clearTimeout(timer.value)
     timer.value = setTimeout(() => {
         searchTasks(searchQuery.value)
-    }, 500)
+    }, 150)
 }
 
 </script>
