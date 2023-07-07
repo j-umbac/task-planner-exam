@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <form @submit.prevent="handleSubmit()">
-            <div class="flex p-2 w-full space-x-4 items-center bg-surface-input rounded">
+            <div class="flex p-2 w-full space-x-4 items-center bg-surface-input rounded border">
                 <Icon name="fa6-solid:plus" color="gray"></Icon>
                 <input class="w-full outline-0 bg-surface-input" type="text" :placeholder="placeholderText" @focus="updateFocus()" @focusout="revertFocus()"
                 v-model="newTask.title">
