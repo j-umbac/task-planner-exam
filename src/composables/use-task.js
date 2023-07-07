@@ -49,7 +49,13 @@ export function useTask() {
     }
 
     async function editTask(task) {
-        console.log(task)
+        await useFetch(useRuntimeConfig().public.apiUrl + '/tasks/' + task.id, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ 'title': task.title})
+        }).catch(err => {
+            console.log(err)
+        })
     }
 
     async function addTask(task) {
