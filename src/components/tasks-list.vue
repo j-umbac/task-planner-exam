@@ -19,9 +19,11 @@
 <script setup>
 const { filtered } = defineProps(['filtered'])
 import { useTaskStore } from '@/stores/states'
-const { getTasks} = useTasks()
+const { getTasks } = useTasks()
+const { getUsers } = useUsers()
 
 getTasks()
+getUsers()
 const tasks = useTaskStore()
 
 </script>
