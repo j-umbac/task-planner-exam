@@ -1,7 +1,8 @@
 import { useTaskStore } from '@/stores/states'
+const tasks = useTaskStore()
+const { getTasks } = useTasks()
 
 export function useTask() {
-    const tasks = useTaskStore()
 
     async function deleteTask(id) {
         tasks.taskList = tasks.taskList.filter(task => task.id != id)
@@ -50,11 +51,24 @@ export function useTask() {
         console.log(task)
     }
 
+    async function addTask(task){
+        let tempTask = Object.assign({}, task) 
+        await useFetch(useRuntimeConfig().public.apiUrl + '/tasks', {
+            method: 'POST',
+            headers: {'content-type':'application/json'},
+            body: JSON.stringify(tempTask)
+        }).then(()=> {
+            task.title = ""
+            getTasks()
+        })
+    }
+
     return {
         deleteTask,
         toggleImportant,
         toggleComplete,
         updateAssignee,
-        editTask
+        editTask,
+        addTask,
     }
 }
