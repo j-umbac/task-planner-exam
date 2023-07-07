@@ -9,11 +9,6 @@
                 <SearchBar :filtered="filtered" />
                 <TasksList :filtered="filtered" />
             </div>
-            <ul>
-                <li v-for="task in tasks.taskList" class="border p-2 m-2">
-                    {{ task }}
-                </li>
-            </ul>
             <AddTask placeholder="Add a Task" />
         </div>
     </div>
