@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col h-[100dvh] container mx-auto md:w-auto w-[90%]">
         <div class="flex mt-16 justify-between items-center">
-            <h1 class="text-2xl font-semibold text-on-ground">Task Planner</h1>
+            <h1 class="text-2xl font-semibold text-on-ground hover:cursor-pointer" @click="navigateTo({name: 'index'})">Task Planner</h1>
             <FilterButtons @useFilter="handleFilter" />
         </div>
         <div class="flex flex-col h-full mt-4 justify-between pb-8">
