@@ -9,12 +9,13 @@
                 {{ task.title }}
             </span>
         </div>
-        <div class="flex space-x-2">
-            <button @click="toggleImportant(task)">
+        <div class="flex space-x-3 items-center">
+            <AssigneeIcon :assignee="task.assignee" :task="task"/>
+            <button @click="toggleImportant(task)" class="hover:bg-gray-100 px-1 rounded-md pb-1">
                 <Icon v-if="task.is_important" name="fa6-solid:star" color="#F6C23E" />
                 <Icon v-else name="fa6-regular:star" />
             </button>
-            <button @click="deleteTask(task.id)">
+            <button @click="deleteTask(task.id)" class="hover:bg-gray-100 px-1 rounded-md pb-1">
                 <Icon name="fa6-solid:trash-can" class="hover:text-red-600"></Icon>
             </button>
         </div>
