@@ -11,6 +11,7 @@ module.exports = {
                 'on-ground': '#3F404A',
                 'on-card': '#787E95',
                 'on-card-secondary': '#939399',
+                'on-primary': '#FFFFFF',
                 surface: {
                     input: '#F3F4F7',
                     ground: '#F9FAFC',
