@@ -27,7 +27,7 @@
         </div>
     </div>
     <div v-if="openModal">
-        <ConfirmModal @closeModal="openModal = false"/>
+        <ConfirmModal @closeModal="openModal = false" @deleteTask="deleteTask(task.id)"/>
     </div>
 </template>
 
