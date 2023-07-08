@@ -2,15 +2,15 @@
     <div class="flex space-x-2 text-on-surface">
         <button class="px-4 py-1 rounded-md" :class="{ 'bg-surface-active': activeFilter == 'all' }"
             @click="handleFilter('all')">
-            <span></span> All
+            All
         </button>
         <button class="px-4 py-1 rounded-md" :class="{ 'bg-surface-active': activeFilter == 'important' }"
             @click="handleFilter('important')">
-            <span>{{ tasks.importantLength }}</span> Important
+            <span>{{ tasks.importantLength }} Important</span>
         </button>
         <button class="px-4 py-1 rounded-md" :class="{ 'bg-surface-active': activeFilter == 'done' }"
             @click="handleFilter('done')">
-            <span>{{ tasks.doneLength }}</span> Done
+            <span>{{ tasks.doneLength }} Done</span>
         </button>
     </div>
 </template>
