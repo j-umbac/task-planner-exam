@@ -1,7 +1,7 @@
 <template>
     <div v-if="Object.keys(assignee).length" ref="target">
-        <button @click="toggleDropDown(); toggle = !toggle" class="flex items-center">
-            <nuxt-img :src="assignee.avatar" class="rounded-full p-1 w-12" />
+        <button @click="toggleDropDown(); toggle = !toggle" class="flex items-center justify-end">
+            <nuxt-img :src="assignee.avatar" class="rounded-full p-1 lg:w-12 sm:w-[50%] w-[90%]" />
         </button>
         <AssigneeDropdown v-if="toggle" :task="task"/>
     </div>
