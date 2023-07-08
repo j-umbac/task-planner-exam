@@ -22,6 +22,14 @@ module.exports = {
                     hover: 'var(--surface-hover)',
                     active: '#E8E9EE'
                 },
+                dashboard: {
+                    primary: '#3656F5',
+                    secondary: '#4563F6',
+                    green: '#22C55E',
+                    orange: '#FFA953',
+                    red: '#FF6161',
+                    'on-surface': '#8A8F9E'
+                }
 
             },
             fontFamily: {
