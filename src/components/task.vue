@@ -21,10 +21,13 @@
                 <Icon v-if="task.is_important" name="fa6-solid:star" color="#F6C23E" />
                 <Icon v-else name="fa6-regular:star" />
             </button>
-            <button @click="deleteTask(task.id)" class="hover:bg-gray-100 rounded-md p-2 flex">
+            <button @click="confirmDelete()" class="hover:bg-gray-100 rounded-md p-2 flex">
                 <Icon name="fa6-solid:trash-can" class="hover:text-red-600"></Icon>
             </button>
         </div>
+    </div>
+    <div v-if="openModal">
+        <ConfirmModal @closeModal="openModal = false"/>
     </div>
 </template>
 
@@ -32,9 +35,14 @@
 const { task } = defineProps(['task'])
 const { deleteTask, toggleImportant, toggleComplete } = useTask()
 const isEdit = ref(false)
+const openModal = ref(false)
 
 const toggleEdit = () => {
     isEdit.value = true
+}
+
+const confirmDelete = () => {
+    openModal.value = true
 }
 
 </script>
