@@ -9,7 +9,7 @@
                 <SearchBar :filtered="filtered" />
                 <TasksList :filtered="filtered" />
             </div>
-            <AddTask placeholder="Add a Task" />
+            <AddTask placeholder="Add a Task" class="mt-8"/>
         </div>
     </div>
 </template>
