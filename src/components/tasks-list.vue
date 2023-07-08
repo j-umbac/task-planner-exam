@@ -6,13 +6,17 @@
         <draggable 
             v-model="tasks.filteredTaskList" @start="drag = true" @end="drag = false" item-key="id" class="space-y-4" v-if="filtered">
             <template #item="{ element }">
-                <Task :task="element"/>
+                <div>
+                    <Task :task="element"/>
+                </div>
             </template>
         </draggable>
         <draggable 
-            v-model="tasks.taskList" @start="drag = true" @end="drag = false" item-key="id" class="space-y-4" v-else>
+            v-model="tasks.taskList" @start="drag = true" @end="drag = false" item-key="id" group="tasks" class="space-y-4" v-else>
             <template #item="{ element }">
-                <Task :task="element"/>
+                <div>
+                    <Task :task="element"/>
+                </div>
             </template>
         </draggable>
     </div>
