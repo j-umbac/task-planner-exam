@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full bg-surface-card shadow-md px-8 py-4">
+    <header class="w-full bg-surface-card shadow pl-8 py-4">
         <div class="flex justify-between items-center">
             <div class="flex items-center w-1/3 space-x-10">
                 <span>
