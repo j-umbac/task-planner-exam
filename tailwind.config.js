@@ -28,7 +28,8 @@ module.exports = {
                     green: '#22C55E',
                     orange: '#FFA953',
                     red: '#FF6161',
-                    'on-surface': '#8A8F9E'
+                    'on-surface': '#8A8F9E',
+                    ground: '#F6F9FD'
                 }
 
             },
