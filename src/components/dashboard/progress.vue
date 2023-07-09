@@ -2,23 +2,22 @@
     <div class="text-dashboard-on-surface p-4">
         <div class="flex items-center justify-between space-x-8">
             <div v-for="item in accountProgress" class="w-1/4 flex space-x-4">
-                <div class="bg-gray-200 rounded-full p-3">
-                    <Icon :name="item.icon" width="24px" height="24px" />
+                <div class="bg-gray-200 rounded-full p-3 flex items-center">
+                    <Icon :name="item.icon" width="16px" height="16px" />
                 </div>
                 <div class="flex flex-col w-full">
                     <span class="text-gray-900">{{ item.name }}</span>
                     <div class="flex space-x-2 items-center">
-                        <div class="w-full bg-gray-200 h-1.5">
-                            <div v-if="item.completion == 100" class="h-1.5 bg-dashboard-green"
+                        <div class="w-full bg-gray-200 h-1.5 rounded-full">
+                            <div v-if="item.completion == 100" class="h-1.5 bg-dashboard-green rounded-full"
                                 :style="'width:' + item.completion + '%'"></div>
-                            <div v-if="item.completion > 50" class="h-1.5 bg-dashboard-orange"
+                            <div v-else-if="item.completion > 50" class="h-1.5 bg-dashboard-orange rounded-full"
                                 :style="'width:' + item.completion + '%'"></div>
-                            <div v-else class="h-1.5 bg-dashboard-red" :style="'width:' + item.completion + '%'"></div>
+                            <div v-else class="h-1.5 bg-dashboard-red rounded-full" :style="'width:' + item.completion + '%'"></div>
                         </div>
-                        <span v-if="item.completion == 100" class="text-dashboard-green">{{ item.completion }}%</span>
-                        <span v-if="item.completion > 50" class="text-dashboard-orange">{{ item.completion }}%</span>
-
-                        <span v-else class="text-dashboard-red">{{ item.completion }}%</span>
+                        <span v-if="item.completion == 100" class="text-dashboard-green text-sm">{{ item.completion }}%</span>
+                        <span v-else-if="item.completion > 50" class="text-dashboard-orange text-sm">{{ item.completion }}%</span>
+                        <span v-else class="text-dashboard-red text-sm">{{ item.completion }}%</span>
 
                     </div>
                 </div>
