@@ -1,7 +1,7 @@
 <template>
     <div class="text-dashboard-on-surface p-4">
         <div class="flex items-center">
-            <h2 class="text-2xl font-semibold text-black">Welcome, Juan!</h2>
+            <h2 class="text-xl font-semibold text-black">Welcome, Juan!</h2>
             <div class="ml-auto flex space-x-2 items-center">
                 <input type="checkbox">
                 <span>Don't remind me again</span>
