@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="absolute inset-0 flex justify-end items-end">
-                <span class="text-white bg-black px-2 py-1 m-3 text-sm rounded">1.55</span>
+                <span class="text-white bg-black px-2 py-1 m-3 text-sm rounded">1:55</span>
             </div>
         </div>
     </div>
