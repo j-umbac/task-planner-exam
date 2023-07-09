@@ -1,11 +1,11 @@
 <template>
-    <div class="w-full flex flex-col space-y-4 font-[500]">
+    <div class="flex flex-col space-y-4 font-[500] ">
         <ul class="flex flex-col space-y-1 text-dashboard-on-surface">
             <li v-for="item in profileNav">
-                <button :class="{ 'bg-gray-200 text-dashboard-primary': item.isActive }"
-                    class="py-2 px-4 rounded-md flex items-center flex-row w-full hover:bg-gray-200">
+                <button :class="{ 'bg-[#EFF2F7] text-dashboard-primary': item.isActive }"
+                    class="py-2 px-4 rounded-md flex items-center flex-row w-full hover:bg-[#EFF2F7]">
                     <div class="flex items-center space-x-4">
-                        <Icon :name="item.icon" />
+                        <Icon :name="item.icon" height="20px" width="20px"/>
                         <span>{{ item.name }}</span>
                     </div>
                     <Icon v-if="item.isActive" name="fa6-solid:angle-right" class="ml-auto" />
@@ -16,11 +16,12 @@
         <ul class="flex flex-col space-y-1 text-dashboard-on-surface">
             <li v-for="item in dashBoardNav">
                 <button :class="{ 'bg-gray-200 text-dashboard-primary': item.isActive }"
-                    class="py-2 px-4 rounded-md flex items-center flex-row w-full hover:bg-gray-200">
+                    class="py-2 px-4 rounded-md flex items-center flex-row w-full hover:bg-[#EFF2F7]">
                     <div class="flex items-center space-x-4">
-                        <Icon :name="item.icon" />
+                        <Icon :name="item.icon" height="20px" width="20px"/>
                         <span>{{ item.name }}</span>
-                        <span v-if="item.notifications" class="bg-dashboard-red px-2 text-on-primary rounded-md py-0.5 text-sm">
+                        <span v-if="item.notifications"
+                            class="bg-dashboard-red px-2 text-on-primary rounded-md py-0.5 text-sm">
                             {{ item.notifications }}
                         </span>
                     </div>
@@ -29,12 +30,13 @@
             </li>
         </ul>
         <div class="grid">
-            <span class="text-sm font-normal text-dashboard-on-surface">Copyright 2018 - 2023. All Rights Reserved</span>
+            <span class="text-sm font-normal text-dashboard-on-surface">Copyright 2018 - 2023. All Rights
+                Reserved</span>
             <span class="text-sm font-normal text-dashboard-primary">
                 <button>
-                    Terms of Use 
+                    Terms of Use
                 </button>
-                • 
+                •
                 <button>
                     Privary Policy
                 </button>
@@ -70,7 +72,7 @@ const profileNav = ref([
 const dashBoardNav = ref([
     {
         name: 'Application Tracking',
-        icon: 'ph:suitcase',
+        icon: 'ph:suitcase-bold',
         isActive: false
     },
     {
@@ -91,7 +93,7 @@ const dashBoardNav = ref([
     },
     {
         name: 'Settings',
-        icon: 'clarity:cog-line',
+        icon: 'akar-icons:gear',
         isActive: false
     },
 ])
